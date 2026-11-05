@@ -3,20 +3,20 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Krishna Chaithanya · DevOps & Cloud Infrastructure</title>
-  <meta name="description" content="Krishna Chaithanya: Senior Linux Administrator and DevOps Engineer. 8+ years, 4000+ production servers, AWS certified. An interactive 3D data center portfolio.">
-  <meta name="theme-color" content="#10070C">
-  <meta property="og:title" content="Krishna Chaithanya · DevOps & Cloud Infrastructure">
-  <meta property="og:description" content="Fly through a 3D data center of 4,000 racks: one for every server I manage.">
+  <title>Krishna Chaithanya · Linux, DevOps & Cloud Infrastructure</title>
+  <meta name="description" content="Krishna Chaithanya keeps 4,000+ Linux and Windows servers patched, monitored and calm. Senior Linux Administrator and DevOps Engineer, AWS certified, Bangalore.">
+  <meta name="theme-color" content="#0E1030">
+  <meta property="og:title" content="Krishna Chaithanya · Linux, DevOps & Cloud Infrastructure">
+  <meta property="og:description" content="26,000 particles rebuild themselves as you scroll: a name, a globe, one point per server, a pipeline, a galaxy.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://yadakrishna245.github.io/">
-  <meta property="og:image" content="https://yadakrishna245.github.io/assets/preview.jpg">
+  <meta property="og:image" content="https://yadakrishna245.github.io/assets/preview-v2.jpg">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2310070C'/%3E%3Crect x='3' y='3' width='58' height='58' rx='11' fill='none' stroke='%23701A3D' stroke-width='2'/%3E%3Ctext x='32' y='42' text-anchor='middle' font-family='Arial' font-weight='700' font-size='26' fill='%23E5B5C7'%3EKC%3C/text%3E%3C/svg%3E">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%236FE7FF'/%3E%3Cstop offset='.5' stop-color='%239C7BFF'/%3E%3Cstop offset='1' stop-color='%23FFB86B'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='32' fill='%230E1030'/%3E%3Ccircle cx='32' cy='32' r='17' fill='none' stroke='url(%23g)' stroke-width='5'/%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Unbounded:wght@300;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="app.css">
   <script type="importmap">
   {
     "imports": {
@@ -27,161 +27,110 @@
   </script>
 </head>
 <body>
-  <div id="loader" aria-hidden="true">
-    <div class="boot">
-      <p><span class="ok">[  OK  ]</span> Reached target <b>network-online</b></p>
-      <p><span class="ok">[  OK  ]</span> Mounted <b>/srv/fleet</b> (4000 nodes)</p>
-      <p><span class="ok">[  OK  ]</span> Started <b>monitoring.service</b></p>
-      <p><span class="ok">[  OK  ]</span> Started <b>krishna-portfolio.service</b></p>
-      <p class="prompt">krishna@infra:~$ <span class="cursor"></span></p>
-      <div class="bar"><i></i></div>
-    </div>
-  </div>
+  <canvas id="field" aria-hidden="true"></canvas>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="cursor" aria-hidden="true"></div>
 
-  <canvas id="scene" aria-hidden="true"></canvas>
-  <div class="vignette" aria-hidden="true"></div>
-  <div class="progress" aria-hidden="true"><i></i></div>
-
-  <header class="topbar">
-    <a class="logo" href="#hero" aria-label="Back to top">KC<span>.</span></a>
-    <nav class="dots" aria-label="Sections"></nav>
+  <header class="bar">
+    <a class="home" href="#top">Krishna Chaithanya</a>
+    <a class="pill magnetic" href="classic/">Classic version</a>
   </header>
 
-  <main id="content">
-    <!-- 0 -->
-    <section class="section" id="hero" data-label="Home">
-      <div class="hero-text">
-        <p class="mono kicker reveal">$ ssh krishna@infra</p>
-        <h1 class="reveal">Krishna<br>Chaithanya</h1>
-        <div class="underline reveal"></div>
-        <p class="role reveal">Senior Linux Administrator · DevOps Engineer · Cloud Infrastructure</p>
-        <p class="chips reveal">
-          <span>Bangalore, India</span><span class="live">Open to work</span><span>8+ years</span>
-        </p>
+  <main>
+    <section class="panel hero" id="top" data-shape="name">
+      <h1 class="hero-name">Krishna Chaithanya</h1>
+      <div class="hero-foot">
+        <p class="lede">I keep 4,000+ Linux and Windows servers patched, monitored and calm. Eight years in enterprise production, now looking for my next DevOps, SRE or cloud infrastructure role.</p>
+        <p class="where"><span class="dot"></span>Bangalore, open to remote or hybrid</p>
       </div>
-      <a class="scroll-hint mono" href="#about">scroll to enter the data center <span>↓</span></a>
+      <p class="scroll-cue">Scroll</p>
     </section>
 
-    <!-- 1 -->
-    <section class="section left" id="about" data-label="About">
-      <div class="card reveal">
-        <p class="mono kicker">~/whoami</p>
-        <h2>I keep production calm.</h2>
-        <p>I'm a Senior Linux Administrator and DevOps Engineer with 8+ years in enterprise production. Day to day that means patching at scale, owning incidents until they're closed, automating the repeatable work with Ansible and Terraform, and keeping AWS and hybrid workloads healthy and monitored.</p>
-        <div class="skills">
-          <div><h3>Platforms</h3><p>RHEL 7/8/9 · Ubuntu LTS · Windows Server · AWS · VMware vSphere</p></div>
-          <div><h3>DevOps</h3><p>Git · Jenkins · Docker · Kubernetes · Terraform · Ansible</p></div>
-          <div><h3>Observability</h3><p>Dynatrace · AppDynamics · Prometheus · Grafana · Nexthink</p></div>
-          <div><h3>Scripting</h3><p>Bash · Python · PowerShell</p></div>
-        </div>
+    <section class="panel left" id="about" data-shape="globe">
+      <div class="copy">
+        <h2>quiet infrastructure</h2>
+        <p>Most of my work is the kind nobody notices when it goes well: patching thousands of machines without an outage, owning incidents until they're actually closed, and turning repeat chores into Ansible and Terraform. I look after AWS and hybrid workloads and keep them monitored end to end.</p>
+        <dl class="kit">
+          <div><dt>Platforms</dt><dd>RHEL 7, 8 and 9, Ubuntu LTS, Windows Server, AWS, VMware vSphere</dd></div>
+          <div><dt>Automation</dt><dd>Ansible, Terraform, Jenkins, Docker, Kubernetes, Git</dd></div>
+          <div><dt>Observability</dt><dd>Dynatrace, AppDynamics, Prometheus, Grafana, Nexthink</dd></div>
+          <div><dt>Scripting</dt><dd>Bash, Python, PowerShell</dd></div>
+        </dl>
       </div>
     </section>
 
-    <!-- 2 -->
-    <section class="section right" id="fleet" data-label="Fleet">
-      <div class="card reveal">
-        <p class="mono kicker">$ fleet --summary</p>
-        <h2>The fleet</h2>
-        <div class="stats">
-          <div><b data-count="4000" data-suffix="+">4000+</b><span>servers managed</span></div>
-          <div><b data-count="3500" data-prefix="~">~3500</b><span>Linux (RHEL / Ubuntu)</span></div>
-          <div><b data-count="500" data-prefix="~">~500</b><span>Windows endpoints</span></div>
-          <div><b data-count="8" data-suffix="+">8+</b><span>years in production</span></div>
-        </div>
-        <p class="note mono" id="rack-note">Every rack in this city stands for one server I manage.</p>
+    <section class="panel right" id="fleet" data-shape="lattice">
+      <div class="copy">
+        <h2>4,000 servers</h2>
+        <p>Each point in this grid stands for one server I look after: about 3,500 running RHEL and Ubuntu, and about 500 on Windows.</p>
+        <p class="aside" id="lattice-note">The lattice holds 4,096 points, sixteen on each side.</p>
       </div>
     </section>
 
-    <!-- 3 -->
-    <section class="section top" id="projects" data-label="Projects">
-      <div class="card slim reveal">
-        <p class="mono kicker">~/projects</p>
-        <h2>Selected projects</h2>
-        <p class="hint mono desktop-only">Hover a screen · click to open the repo</p>
+    <section class="panel left tall" id="work" data-shape="helix">
+      <div class="copy wide">
+        <h2>things I've built</h2>
+        <ol class="work">
+          <li><a href="https://github.com/yadakrishna245/terraform-aws-infrastructure" target="_blank" rel="noopener">
+            <span class="w-title">terraform-aws-infrastructure</span>
+            <span class="w-desc">End-to-end AWS provisioning with Terraform: VPC, EC2, RDS, S3 and CloudFront.</span>
+            <span class="w-tech">Terraform, AWS</span></a></li>
+          <li><a href="https://github.com/yadakrishna245/Photo-Gallery-App-Serverless-Capstone-Project" target="_blank" rel="noopener">
+            <span class="w-title">Serverless photo gallery</span>
+            <span class="w-desc">Secure image upload and viewing on Cognito, Lambda, API Gateway, S3, DynamoDB and CloudFront.</span>
+            <span class="w-tech">AWS serverless, Python</span></a></li>
+          <li><a href="https://github.com/yadakrishna245/DockerShield" target="_blank" rel="noopener">
+            <span class="w-title">DockerShield</span>
+            <span class="w-desc">Scans Docker images for vulnerabilities, malware, secrets and misconfigurations before they ship.</span>
+            <span class="w-tech">Python, Docker</span></a></li>
+          <li><a href="https://github.com/yadakrishna245/github-security-scanner" target="_blank" rel="noopener">
+            <span class="w-title">github-security-scanner</span>
+            <span class="w-desc">Checks a GitHub profile for compromised npm and PyPI packages, leaked secrets and vulnerable dependencies.</span>
+            <span class="w-tech">Python</span></a></li>
+          <li><a href="https://github.com/yadakrishna245/RDS-Blue-Green-Deployment" target="_blank" rel="noopener">
+            <span class="w-title">RDS blue/green deployment</span>
+            <span class="w-desc">Zero-downtime database upgrades and migrations on AWS RDS.</span>
+            <span class="w-tech">AWS RDS</span></a></li>
+          <li><a href="https://github.com/yadakrishna245/ECR-Devsecops-Commands-Image" target="_blank" rel="noopener">
+            <span class="w-title">ECR DevSecOps pipeline</span>
+            <span class="w-desc">Container build, image scanning and secure deployment with AWS ECR.</span>
+            <span class="w-tech">AWS ECR, Docker</span></a></li>
+        </ol>
       </div>
-      <ul class="project-list">
-        <li class="project" data-repo="terraform-aws-infrastructure">
-          <a href="https://github.com/yadakrishna245/terraform-aws-infrastructure" target="_blank" rel="noopener">
-            <h3>terraform-aws-infrastructure</h3>
-            <p>End-to-end AWS provisioning with Terraform: VPC, EC2, RDS, S3 and CloudFront.</p>
-            <span class="tags">Terraform · HCL · AWS</span>
-          </a>
-        </li>
-        <li class="project" data-repo="Photo-Gallery-App-Serverless-Capstone-Project">
-          <a href="https://github.com/yadakrishna245/Photo-Gallery-App-Serverless-Capstone-Project" target="_blank" rel="noopener">
-            <h3>Serverless Photo Gallery</h3>
-            <p>Secure image upload and viewing with Cognito, Lambda, API Gateway, S3, DynamoDB and CloudFront.</p>
-            <span class="tags">AWS Lambda · Cognito · DynamoDB · Python</span>
-          </a>
-        </li>
-        <li class="project" data-repo="DockerShield">
-          <a href="https://github.com/yadakrishna245/DockerShield" target="_blank" rel="noopener">
-            <h3>DockerShield</h3>
-            <p>Docker image scanner for vulnerabilities, malware, secrets and misconfigurations before an image ships.</p>
-            <span class="tags">Python · Docker · Security</span>
-          </a>
-        </li>
-        <li class="project" data-repo="github-security-scanner">
-          <a href="https://github.com/yadakrishna245/github-security-scanner" target="_blank" rel="noopener">
-            <h3>github-security-scanner</h3>
-            <p>Scans a GitHub profile for compromised npm/PyPI packages, leaked secrets and vulnerable dependencies.</p>
-            <span class="tags">Python · Security</span>
-          </a>
-        </li>
-        <li class="project" data-repo="RDS-Blue-Green-Deployment">
-          <a href="https://github.com/yadakrishna245/RDS-Blue-Green-Deployment" target="_blank" rel="noopener">
-            <h3>RDS Blue/Green Deployment</h3>
-            <p>Zero-downtime database upgrades and migrations with a Blue/Green strategy on AWS RDS.</p>
-            <span class="tags">AWS RDS</span>
-          </a>
-        </li>
-        <li class="project" data-repo="ECR-Devsecops-Commands-Image">
-          <a href="https://github.com/yadakrishna245/ECR-Devsecops-Commands-Image" target="_blank" rel="noopener">
-            <h3>ECR DevSecOps Pipeline</h3>
-            <p>Container build, image scanning and secure deployment with AWS ECR.</p>
-            <span class="tags">AWS ECR · Docker · DevSecOps</span>
-          </a>
-        </li>
-      </ul>
     </section>
 
-    <!-- 4 -->
-    <section class="section right" id="recognition" data-label="Recognition">
-      <div class="card reveal">
-        <p class="mono kicker">$ cat /etc/recognition</p>
-        <h2>Recognition</h2>
+    <section class="panel right" id="recognition" data-shape="halo">
+      <div class="copy">
+        <h2>recognition</h2>
         <figure class="award">
-          <img src="assets/award.jpg" alt="Krishna receiving the On-the-Spot Award at Gemini Solutions" loading="lazy" width="679" height="738">
+          <img src="assets/award.jpg" alt="Krishna receiving the On-the-Spot Award at Gemini Solutions" width="679" height="738" loading="lazy">
           <figcaption>
-            <a href="https://www.linkedin.com/feed/update/urn:li:activity:7464191224032243712/" target="_blank" rel="noopener"><b>On-the-Spot Award · Gemini Solutions Pvt Ltd</b></a>
-            <span>For production support, incident resolution and enterprise infrastructure reliability.</span>
+            <a href="https://www.linkedin.com/feed/update/urn:li:activity:7464191224032243712/" target="_blank" rel="noopener">On-the-Spot Award, Gemini Solutions</a>
+            for production support, incident resolution and keeping enterprise infrastructure reliable.
           </figcaption>
         </figure>
-        <h3>AWS certifications</h3>
         <ul class="certs">
-          <li><a href="https://www.linkedin.com/posts/krishna-yada-8a8441239_aws-awscertified-solutionsarchitect-activity-7449323540820152320-Eozp" target="_blank" rel="noopener">Solutions Architect – Associate</a><span class="mono">Apr 2026</span></li>
-          <li><a href="https://www.linkedin.com/posts/krishna-yada-8a8441239_aws-cloudcomputing-awscertified-activity-7452297084487045120-On62" target="_blank" rel="noopener">Cloud Practitioner</a><span class="mono">Mar 2026</span></li>
+          <li><a href="https://www.linkedin.com/posts/krishna-yada-8a8441239_aws-awscertified-solutionsarchitect-activity-7449323540820152320-Eozp" target="_blank" rel="noopener">AWS Certified Solutions Architect, Associate</a><span>April 2026</span></li>
+          <li><a href="https://www.linkedin.com/posts/krishna-yada-8a8441239_aws-cloudcomputing-awscertified-activity-7452297084487045120-On62" target="_blank" rel="noopener">AWS Certified Cloud Practitioner</a><span>March 2026</span></li>
         </ul>
       </div>
     </section>
 
-    <!-- 5 -->
-    <section class="section center bottom" id="contact" data-label="Contact">
-      <div class="card contact reveal">
-        <p class="mono kicker">$ ./connect.sh</p>
-        <h2>Let's build reliable things.</h2>
-        <p>Looking for DevOps Engineer, SRE or Cloud Infrastructure roles: remote, or hybrid in Bangalore.</p>
-        <div class="buttons">
-          <a class="btn primary" href="https://www.linkedin.com/in/krishna-yada-8a8441239" target="_blank" rel="noopener">LinkedIn</a>
-          <a class="btn" href="https://github.com/yadakrishna245" target="_blank" rel="noopener">GitHub</a>
-          <a class="btn" href="mailto:yadakrishna245@gmail.com">Email</a>
+    <section class="panel end" id="contact" data-shape="galaxy">
+      <div class="copy center">
+        <h2>say hello</h2>
+        <p>I'm open to DevOps, SRE and cloud infrastructure roles, remote or hybrid in Bangalore.</p>
+        <div class="actions">
+          <a class="btn solid magnetic" href="https://www.linkedin.com/in/krishna-yada-8a8441239" target="_blank" rel="noopener">Message me on LinkedIn</a>
+          <a class="btn magnetic" href="mailto:yadakrishna245@gmail.com">Email me</a>
+          <a class="btn magnetic" href="https://github.com/yadakrishna245" target="_blank" rel="noopener">See my GitHub</a>
         </div>
-        <p class="foot mono">Built with Three.js · hosted on GitHub Pages · no servers were harmed</p>
+        <p class="colophon">Made with Three.js. Hosted on GitHub Pages.</p>
       </div>
     </section>
   </main>
 
-  <script src="ui.js" defer></script>
-  <script type="module" src="main.js"></script>
+  <script src="app-ui.js" defer></script>
+  <script type="module" src="app.js"></script>
 </body>
 </html>
