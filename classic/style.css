@@ -223,3 +223,7 @@ body.no-webgl .desktop-only { display: none; }
 /* link to the new design */
 .swap { pointer-events: auto; margin-left: auto; margin-right: 22px; font: 12px var(--mono); color: var(--pale); text-decoration: none; border: 1px solid var(--line); padding: 6px 12px; border-radius: 999px; background: rgba(25, 11, 18, 0.55); }
 .swap:hover, .swap:focus-visible { border-color: var(--pale); }
+
+/* recognition card with certifications + courses */
+.certs span { white-space: nowrap; }
+.award img { max-height: 220px; }

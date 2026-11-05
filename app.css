@@ -132,6 +132,8 @@ h2 {
 .certs a:hover, .certs a:focus-visible { color: var(--cyan); }
 .certs span { color: var(--mist-dim); white-space: nowrap; }
 
+.list-head { font: 500 16px var(--display); letter-spacing: -0.01em; color: var(--mist); margin: 26px 0 6px; }
+
 /* contact */
 .actions { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; margin: 30px 0 34px; }
 .btn {
